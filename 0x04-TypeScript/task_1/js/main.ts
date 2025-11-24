@@ -45,7 +45,9 @@ function printTeacher(teacher: { firstName: string; lastName: string }): string 
 }
 
 
+//*TASK 4: StudentClass implementation **//
 // Interface for the StudentClass constructor
+
 interface StudentConstructor {
     new (firstName: string, lastName: string): StudentClassInterface;
 }
@@ -74,6 +76,3 @@ class StudentClass implements StudentClassInterface {
         return this.firstName;
     }
 }
-
-// Export for testing
-export { StudentClass, StudentConstructor, StudentClassInterface };
