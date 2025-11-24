@@ -1,23 +1,18 @@
-interface Teacher{
-    readonly firstName: string;
-    readonly lastName: string;
-    fullTimeEmployee: boolean // required;
-    yearsOfExperience?: number;
-    location: string;
-    [key: string]: any;
-
+export interface Teacher {
+  readonly firstName: string;
+  readonly lastName: string;
+  fullTimeEmployee: boolean;
+  yearsOfExperience?: number;
+  location: string;
+  [key: string]: any;
 }
-const teacher1: Teacher = {
-    firstName: "Alice",
-    lastName: "Johnson",
-    fullTimeEmployee: true,
-    location: "Chicago",
-    contract: false
+
+const teacher3: Teacher = {
+  firstName: 'John',
+  fullTimeEmployee: false,
+  lastName: 'Doe',
+  location: 'London',
+  contract: false,
 };
-const teacher2: Teacher = {
-    firstName: "Bob",   
-    lastName: "Williams",
-    fullTimeEmployee: false,
-    location: "Miami",
-    yearsOfExperience: 5
-};
+
+console.log(teacher3);
