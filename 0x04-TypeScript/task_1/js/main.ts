@@ -1,4 +1,4 @@
-export interface Teacher {
+interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
   fullTimeEmployee: boolean;
@@ -7,7 +7,7 @@ export interface Teacher {
   [key: string]: any;
 }
 
-export interface Directors extends Teacher {
+interface Directors extends Teacher {
   numberOfReports: number;
 }
 
