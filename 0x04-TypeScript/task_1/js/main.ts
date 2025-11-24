@@ -1,3 +1,4 @@
+// Task 1: Teacher interface
 interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
@@ -7,19 +8,20 @@ interface Teacher {
   [key: string]: any;
 }
 
-interface Director extends Teacher {
-  numberOfReports: number;
-}
-
 const teacher3: Teacher = {
   firstName: 'John',
-  fullTimeEmployee: false,
   lastName: 'Doe',
+  fullTimeEmployee: false,
   location: 'London',
   contract: false,
 };
 
 console.log(teacher3);
+
+// Task 2: Director interface extending Teacher
+interface Director extends Teacher {
+  numberOfReports: number;
+}
 
 const director1: Director = {
   firstName: 'John',
@@ -31,13 +33,9 @@ const director1: Director = {
 
 console.log(director1);
 
-// Task 3: printTeacher
-interface printTeacher {
-  (teacher: { firstName: string; lastName: string }): string;
+// Task 3: printTeacher function
+function printTeacher(firstName: string, lastName: string): string {
+  return `${firstName} ${lastName}`;
 }
 
-const printTeacher: printTeacher= ({ firstName, lastName }) => {
-  return `${firstName[0]}. ${lastName}`;
-};
-
-console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
+console.log(printTeacher("John", "Doe"));
