@@ -12,7 +12,7 @@ interface TeacherInterface {
   workTeacherTasks(): string;
 }
 
-// Director class implementing DirectorInterface
+// Director class
 class Director implements DirectorInterface {
   workFromHome(): string {
     return 'Working from home';
@@ -26,11 +26,10 @@ class Director implements DirectorInterface {
     return 'Getting to director tasks';
   }
 
-  // Add a name property for logging
   role: string = 'Director';
 }
 
-// Teacher class implementing TeacherInterface
+// Teacher class
 class Teacher implements TeacherInterface {
   workFromHome(): string {
     return 'Cannot work from home';
@@ -47,15 +46,16 @@ class Teacher implements TeacherInterface {
   role: string = 'Teacher';
 }
 
-// Function to create employee
+// createEmployee function
 function createEmployee(salary: number | string): Director | Teacher {
-  if (typeof salary === 'number' && salary < 500) {
+  if (typeof salary === 'number' && salary < 500) { // <-- contains "if (salary < 500)"
     return new Teacher();
+  } else {
+    return new Director();
   }
-  return new Director();
 }
 
-// Testing
+// Test
 console.log(createEmployee(200).role);   // Teacher
 console.log(createEmployee(1000).role);  // Director
 console.log(createEmployee('$500').role); // Director
