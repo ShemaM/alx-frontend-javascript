@@ -33,46 +33,46 @@ const director1: Director = {
 
 console.log(director1);
 
-
-// Interface for the printTeacher function
+// Task 3: printTeacher function
+// Interface for the function type
 interface printTeacherFunction {
-    (teacher: { firstName: string; lastName: string }): string;
+  (firstName: string, lastName: string): string;
 }
 
-// Function implementation using function declaration
-function printTeacher(teacher: { firstName: string; lastName: string }): string {
-    return `${teacher.firstName.charAt(0)}. ${teacher.lastName}`;
-}
+// Function implementation
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+  return `${firstName.charAt(0)}. ${lastName}`;
+};
 
+console.log(printTeacher("John", "Doe")); // Output: J. Doe
 
-//*TASK 4: StudentClass implementation **//
+// Task 4: StudentClass implementation
 // Interface for the StudentClass constructor
-
 interface StudentConstructor {
-    new (firstName: string, lastName: string): StudentClassInterface;
+  new (firstName: string, lastName: string): StudentClassInterface;
 }
 
 // Interface for the StudentClass instance methods
 interface StudentClassInterface {
-    workOnHomework(): string;
-    displayName(): string;
+  workOnHomework(): string;
+  displayName(): string;
 }
 
 // Implementation of the StudentClass
 class StudentClass implements StudentClassInterface {
-    private firstName: string;
-    private lastName: string;
+  private firstName: string;
+  private lastName: string;
 
-    constructor(firstName: string, lastName: string) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
 
-    workOnHomework(): string {
-        return "Currently working";
-    }
+  workOnHomework(): string {
+    return "Currently working";
+  }
 
-    displayName(): string {
-        return this.firstName;
-    }
+  displayName(): string {
+    return this.firstName;
+  }
 }
