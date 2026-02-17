@@ -57,8 +57,9 @@ function createEmployee(salary: number | string): Director | Teacher {
 
 // Type predicate to check if an employee is a Director
 function isDirector(employee: Director | Teacher): employee is Director {
-  return (employee as Director).workDirectorTasks !== undefined;
+  return employee instanceof Director;
 }
+
 
 // Execute work based on employee type
 function executeWork(employee: Director | Teacher): string {
