@@ -34,31 +34,26 @@ const director1: Director = {
 console.log(director1);
 
 // Task 3: printTeacher function
-// Interface for the function type
 interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-// Function implementation
 const printTeacher: printTeacherFunction = (firstName, lastName) => {
-  return `${firstName.charAt(0)}. ${lastName}`;
+  return `${firstName} ${lastName}`;
 };
 
-console.log(printTeacher("John", "Doe")); // Output: J. Doe
+console.log(printTeacher("John", "Doe")); // Output: John Doe
 
 // Task 4: StudentClass implementation
-// Interface for the StudentClass constructor
 interface StudentConstructor {
   new (firstName: string, lastName: string): StudentClassInterface;
 }
 
-// Interface for the StudentClass instance methods
 interface StudentClassInterface {
   workOnHomework(): string;
   displayName(): string;
 }
 
-// Implementation of the StudentClass
 class StudentClass implements StudentClassInterface {
   private firstName: string;
   private lastName: string;
